@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FinSaathi AI — Your Financial Learning Companion</title>
+<meta name="description" content="Understand money in your language. Learn investing basics, simplify financial documents and take quizzes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#home" class="brand" aria-label="FinSaathi AI home">
+      <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0f3d2e"/><path d="M8 22V12l8-4 8 4v10" fill="none" stroke="#6ee7b7" stroke-width="2"/><path d="M10 20l4-4 3 2 5-6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>FinSaathi AI</span>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu" class="menu" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#assistant">AI Assistant</a>
+      <a href="#simplify">Simplify Documents</a>
+      <a href="#learn">Learn &amp; Quiz</a>
+      <a href="#about">About</a>
+      <a href="#learn" class="btn btn-primary btn-sm">Start Learning</a>
+    </nav>
+    <div class="lang">
+      <label for="lang-select" class="sr">Language</label>
+      <select id="lang-select"><option>English</option><option value="Hindi">हिंदी</option><option value="Marathi">मराठी</option></select>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section id="home" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Understand Money. Make Informed Decisions.</h1>
+      <p class="lead">Financial knowledge in your language. Learn about investments, understand financial documents and build confidence with AI-powered learning.</p>
+      <div class="actions">
+        <a href="#assistant" class="btn btn-primary">Explore AI Assistant</a>
+        <a href="#learn" class="btn btn-ghost">Start Learning</a>
+      </div>
+      <p class="small">Selected language: <strong data-lang-label>English</strong></p>
+    </div>
+    <div class="art" aria-hidden="true">
+      <div class="panel">
+        <div class="panel-bar"><i></i><i></i><i></i></div>
+        <div class="chip-row"><span class="chip">SIP</span><span class="chip">Risk</span><span class="chip">Diversification</span></div>
+        <svg viewBox="0 0 300 120" class="chart"><path d="M0 100 C40 90 60 70 90 75 S150 40 190 50 S250 20 300 10" fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round"/><path d="M0 100 C40 90 60 70 90 75 S150 40 190 50 S250 20 300 10 V120 H0Z" fill="#10b98122"/></svg>
+        <p class="caption">Illustration only — not real market data</p>
+        <div class="bubble">Mutual fund? Think of it as a shared basket of investments. 🌱</div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap cards3">
+    <div class="mini"><b>Learn in Your Language</b><span>English, हिंदी and मराठी.</span></div>
+    <div class="mini"><b>Simplify Complex Finance</b><span>Plain-language explanations.</span></div>
+    <div class="mini"><b>Build Financial Confidence</b><span>Understand before you invest.</span></div>
+  </div>
+</section>
+
+<section id="assistant" class="sec">
+  <div class="wrap">
+    <h2>Meet Your Financial Learning Assistant</h2>
+    <p class="sub">Ask questions about financial concepts and get simple explanations.</p>
+    <div class="chat">
+      <div id="chat-log" class="log" role="log" aria-live="polite"></div>
+      <div id="chat-error" class="error" role="alert" hidden></div>
+      <div class="suggest" id="suggest"></div>
+      <form id="chat-form" class="row" novalidate>
+        <label for="chat-input" class="sr">Your question</label>
+        <input id="chat-input" type="text" placeholder="Type your question…" autocomplete="off">
+        <button class="btn btn-primary" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="simplify" class="sec alt">
+  <div class="wrap">
+    <h2>Complex Finance? Let's Simplify It.</h2>
+    <p class="sub">Turn difficult financial language into easy explanations you can understand.</p>
+    <div class="simp">
+      <div class="card">
+        <label for="doc-text"><b>Paste financial text</b></label>
+        <textarea id="doc-text" rows="8" placeholder="Paste a disclosure, term or clause here…"></textarea>
+        <div class="row wrapr">
+          <label for="doc-lang" class="sr">Output language</label>
+          <select id="doc-lang"><option>English</option><option value="Hindi">हिंदी</option><option value="Marathi">मराठी</option></select>
+          <button class="btn btn-primary" id="simplify-btn">Simplify Text</button>
+          <button class="btn btn-ghost" id="sample-btn">Use sample</button>
+          <button class="btn btn-ghost" id="clear-btn">Clear</button>
+        </div>
+        <div id="doc-error" class="error" role="alert" hidden></div>
+      </div>
+      <div class="card" aria-live="polite">
+        <div id="doc-empty" class="empty">Your simplified explanation will appear here. Try the sample text.</div>
+        <div id="doc-out" hidden>
+          <p class="tag" id="doc-tag"></p>
+          <h3>Simple explanation</h3><p id="out-simple"></p>
+          <h3>Important terms</h3><ul id="out-terms"></ul>
+          <h3>Risks and conditions</h3><ul id="out-risks"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="learn" class="sec">
+  <div class="wrap">
+    <h2>Learn Finance the Easy Way</h2>
+    <p class="sub">Pick a topic to read a short guide, then test yourself.</p>
+    <div class="topics" id="topics"></div>
+    <div class="quiz card" id="quiz" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="about" class="sec alt">
+  <div class="wrap">
+    <h2>Financial Education for Everyone</h2>
+    <p class="sub">FinSaathi AI aims to make financial knowledge more accessible to people across India by reducing language barriers and simplifying complex financial information.</p>
+    <div class="cards3 left">
+      <div class="card"><h3>Accessibility</h3><p>Explanations in the language you are most comfortable with.</p></div>
+      <div class="card"><h3>Financial Awareness</h3><p>Everyday concepts, explained without jargon.</p></div>
+      <div class="card"><h3>Understanding Before Investing</h3><p>Know what a document or product says before you decide.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div><b>FinSaathi AI</b><p>Financial learning in your language, built for first-time investors.</p></div>
+    <div><b>Navigate</b><a href="#home">Home</a><a href="#assistant">AI Assistant</a><a href="#simplify">Simplify Documents</a><a href="#about">About</a></div>
+    <div><b>Learn</b><a href="#learn" data-topic="basics">Basics of Investing</a><a href="#learn" data-topic="mf">Mutual Funds</a><a href="#learn" data-topic="sip">SIP</a><a href="#learn" data-topic="rights">Investor Rights</a></div>
+    <div><b>Contact</b><p>contact@example.com (placeholder)</p></div>
+  </div>
+  <p class="wrap disc">FinSaathi AI is an educational platform. It does not provide personalized investment advice, guarantee returns or replace professional financial guidance. Always verify important financial information with official sources.</p>
+</footer>
+
+<dialog id="modal" aria-labelledby="m-title">
+  <h3 id="m-title"></h3>
+  <div id="m-body"></div>
+  <button class="btn btn-primary" id="m-close">Close</button>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
