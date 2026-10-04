@@ -6,7 +6,7 @@
 /* ========== 1. CONFIG ========== */
 const CONFIG = {
   USE_DEMO: false,
-  API_BASE: 'http://127.0.0.1:5000',
+  API_BASE: 'https://finsaathi-ai.onrender.com/',
   CHAT_ENDPOINT: '/api/chat',
   SIMPLIFY_ENDPOINT: '/api/simplify'
 };
